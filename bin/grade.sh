@@ -32,6 +32,8 @@ do
 
     # don't grade the already graded
     if [ ! -e $student/$runfile ]; then 
+        #enter dumb terminal mode
+        export TERM=dumb
         pushd $student
         script -c "$command" $scriptfile
         text2pdf $scriptfile > $runfile
