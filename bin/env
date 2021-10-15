@@ -1,0 +1,11 @@
+#!/bin/bash
+
+#find the directory of the env script
+DIR=$(dirname $0)
+pushd $DIR 2>&1 > /dev/null
+DIR=$(pwd)
+popd
+
+#set up the path and start bash
+export PATH=$DIR:$PATH
+PS1="grading $ " bash
